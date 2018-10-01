@@ -1,3 +1,4 @@
+# Check if a string is a letter
 def checkIfChar(s):
     for i in range(0, len(s)):
         if s[i] in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":
@@ -6,6 +7,7 @@ def checkIfChar(s):
             return False
 
 
+# Check if a string is a length of 2
 def checkLen(s):
     for i in range(0, len(s)):
         if len(s[i]) == 2:
@@ -14,6 +16,7 @@ def checkLen(s):
             return True
 
 
+# Encrypt a file related to a key list
 def encryptFile(inputFile, keyList):
     outputFile = open("cipher.txt", "w")
 
@@ -59,6 +62,7 @@ def encryptFile(inputFile, keyList):
     outputFile.close()
 
 
+# Decrypt a file related key list, kl = keyList
 def decryptFile(cipFile, kl):
     print("The File is being decrypted...", end="", flush=True)
 
@@ -94,6 +98,7 @@ def decryptFile(cipFile, kl):
             zeroToTen = 0
             intList.append(bitStr)
 
+    # Making a null char a space
     for i in range(0, len(intList)):
         if intList[i] == 0:
             intList[i] += 32
@@ -109,6 +114,7 @@ def decryptFile(cipFile, kl):
 encOrDec = input("Type E for encrypt or D decrypt: ")
 encOrDec = encOrDec.lower()
 
+# need to check if the user enters a e or d
 while encOrDec not in "ed":
     print("Enter a E or a D")
     encOrDec = input("Type E for encrypt or D decrypt: ")
